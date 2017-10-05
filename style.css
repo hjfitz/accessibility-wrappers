@@ -11,6 +11,10 @@ body {
   padding-top: 1%;
 }
 
+textarea:active + label {
+  display: none;
+}
+
 .in {
   flex-grow: 1;
   max-height: 40vh;
