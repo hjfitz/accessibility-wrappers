@@ -7,9 +7,9 @@ const initRecog = cb => {
     'never going to give you up': () => { return window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ'); },
     'Never Going to Give You Up': () => { return window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ'); },  
     'Never Gonna Give You Up': () => { return window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ'); },
-    'Phil': () => { cb('phil is a shit b a')},
-    'Peter': () => { cb('please no')},
-    'Sam': () => { cb('do you want to go to starbucks')}
+    'Phil': () => { cb('Morning scrum guys')},
+    'Peter': () => { cb('Graph QL')},
+    'Sam': () => { cb('Do you want to go to starbucks')}
     
   }
 
