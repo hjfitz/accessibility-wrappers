@@ -17,20 +17,24 @@
 
           <div class="speechRecog in">
               
-                    <header><h2>Speech recognition</h2></header>
-                    <div id='content' >
+                    <header><h2>Speech to Text</h2></header>
+                    <ul id='content' class='collection'>
                   
                     
                   
-                    </div>
+                    </ul>
               
                 </div>
               
                 <div class="tts in">
-                    <header><h2>Speech To Text</h2></header>
+                    <header><h2>Text to Speech</h2></header>
                     <div class='container' id='stt'>
                       <div class="row">
                           <form class="col s12">
+                            <div class="browser-default col s12">
+                                <select class='browser-default' id="select"></select>                                
+                            </div>
+                              
                               <div class="row">
                                 <div class="input-field col s12">
                                     <textarea id="textarea1" class="materialize-textarea"></textarea>
@@ -53,7 +57,10 @@
 
 
   
-  
-  <script type="text/javascript" src="main.js"></script>
+   <!-- Compiled and minified JavaScript -->
+   <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+   
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+   <script type="text/javascript" src="main.js"></script>
   
 </body>
