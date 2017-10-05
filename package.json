@@ -4,5 +4,11 @@
   "description": "Speech recognition and synthesis",
   "main": "index.js",
   "author": "Harry Fitzgerald <fitzgerald_harry at network dot lilly dot com>; Sam Theobald <sam_theobald at network dot lilly dot com>",
-  "license": "GPL-3.0"
+  "license": "GPL-3.0",
+  "scripts": {
+    "start": "http-server"
+  },
+  "dependencies": {
+    "http-server": "^0.10.0"
+  }
 }
