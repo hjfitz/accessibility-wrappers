@@ -18,5 +18,9 @@ textarea:active + label {
 .in {
   flex-grow: 1;
   max-height: 40vh;
+}
+
+ul {
   overflow-y: scroll;
+  max-height: inherit;  
 }

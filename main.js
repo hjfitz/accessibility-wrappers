@@ -3,13 +3,23 @@ const initRecog = cb => {
   const commands = {
     'refresh page': () => { return window.location = window.location; },
     'open YouTube': () => { return window.open('https://www.youtube.com'); },
-    'open Launchpad': () => { return window.open('https://www.cirr-lpld.herokuapp.com'); },
+    'open Launchpad': () => { return window.open('http://cirr-lpld.herokuapp.com'); },
     'never going to give you up': () => { return window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ'); },
     'Never Going to Give You Up': () => { return window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ'); },  
     'Never Gonna Give You Up': () => { return window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ'); },
-    'Phil': () => { cb('Morning scrum guys')},
+    'shut up': () => { return window.open('https://youtu.be/RqQGUJK7Na4?t=29'); },
+    'David': () => { cb('what a melt'); },
+    'Tom': () => { cb('Hey, quick one guys'); },
+    'Nicole': () => { cb('mans not hot'); },
+    'Phil': () => { cb('Phil is the greatest')},
     'Peter': () => { cb('Graph QL')},
-    'Sam': () => { cb('Do you want to go to starbucks')}
+    'Sam': () => { cb('Do you want to go to starbucks')},
+    'Harry': () => { cb('P45 at the ready') ; },
+    'Google search': query => {
+      const googleQuery = 'https://www.google.it/search?q=' + encodeURIComponent(query.replace(/Google search|Google Search/gi, ''));
+      window.open(googleQuery);
+      console.log(googleQuery);
+    }
     
   }
 
@@ -34,7 +44,7 @@ const initRecog = cb => {
       if (transcript.match('Alexa')) p.textContent = 'Go away';
       if (e.results[0].isFinal) {
         Object.keys(commands).forEach(command => {
-          if (transcript.match(command)) commands[command]()
+          if (transcript.match(command)) commands[command](transcript);
         });
         p = document.createElement('li');
         p.classList = 'collection-item';
