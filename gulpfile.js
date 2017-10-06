@@ -6,7 +6,7 @@ const jsdocConfig = require('./jsdoc.config.json');
  * @type {Function}
  */
 gulp.task('doc', cb => {
-  gulp.src(['*.js']).pipe(jsdoc(jsdocConfig, cb));
+  gulp.src(['./js/**/*.js']).pipe(jsdoc(jsdocConfig, cb));
 });
 
 /**
@@ -14,7 +14,7 @@ gulp.task('doc', cb => {
  * Also regenerate the documentation.
  */
 gulp.task('watch', () => {
-  gulp.watch(['*.js'], ['doc']);
+  gulp.watch(['./js/*.js'], ['doc']);
 });
 
 /**

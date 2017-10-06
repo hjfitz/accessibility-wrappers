@@ -1,6 +1,17 @@
-// Note: speech recognition only works in chrome
+/** Class representing speech recognition */
 class SpeechRecog {
-  constructor({ allowCommands, commands }={ allowCommands: false, commands: [] }) {
+  /**
+   * Constructor for SpeechRecog
+   * Use:
+   * const recog = new SpeechRecog({
+   *  allowCommands: true,
+   *  commands: {
+   *      google: () => { window.open('google.com'); }
+   *    }
+   *  });
+   * @param {Object} param0 Arguments
+   */
+  constructor({ allowCommands, commands } = { allowCommands: false, commands: [] }) {
     // Wrapper for vendor prefixes
     window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
     this.recognition = new SpeechRecognition();
@@ -36,7 +47,7 @@ class SpeechRecog {
     // create an array from the results
     const transcript = [...event.results];
     // make the transcript readable
-    const parsed = transcript.map(result => result[0].transcript).join('');
+    const parsed = transcript.map(result => { return result[0].transcript; }).join('');
     const ret = { transcript: parsed };
     this.dispatch('interim', ret);
     // if it's final, emit a custom event with the parsed transcript
@@ -50,7 +61,7 @@ class SpeechRecog {
 
   /**
    * If commands are allowed, go through the list of commands and run the command
-   * If the parameter contains one of the triggers, run the associated function 
+   * If the parameter contains one of the triggers, run the associated function
    * @param {String} voiceCommand A string to match to a command
    */
   handleCommands(voiceCommand) {
@@ -68,7 +79,7 @@ class SpeechRecog {
    * @param {String} type Type of event to listen for
    * @param {Function} cb Function to run on the event
    */
-  addEventListener(type='output', cb) {
+  addEventListener(type = 'output', cb) {
     this.eventListeners.push({
       type,
       cb,
@@ -92,7 +103,7 @@ class SpeechRecog {
   dispatch(type, data) {
     this.eventListeners.forEach(listener => {
       if (listener.type === type) {
-        listener.cb(data)
+        listener.cb(data);
       }
     });
   }
