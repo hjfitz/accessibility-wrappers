@@ -1,3 +1,5 @@
+// const recog = new SpeechRecog();
+
 const initRecog = cb => {
 
   const commands = {
