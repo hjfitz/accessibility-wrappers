@@ -65,7 +65,7 @@ window.onload = () => {
   const synth = window.speechSynthesis;
   const voiceSelect = document.getElementById('select');
 
-  const speak = text => {
+  const synther = text => {
     const voices = window.speechSynthesis.getVoices();
 
     const utterThis = new SpeechSynthesisUtterance(text);
@@ -93,7 +93,8 @@ window.onload = () => {
     const area = document.querySelector('textarea');
     const button = document.getElementById('speak');
     button.addEventListener('click', () => {
-      speak(area.value);
+      console.log(area.value);
+      synther(area.value);
     });
   };
 
